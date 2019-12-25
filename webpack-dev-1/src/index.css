@@ -1,0 +1,6 @@
+@import './a.css';
+@import './b.css';
+
+body div {
+ color:#fff 
+}
