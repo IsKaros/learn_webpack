@@ -13,14 +13,13 @@ module.exports = {
         parallel: true,
       }),
       new OptimizeCss({
-        filename:'main.css'
+        filename:'css/main.css'
       })
     ]
 
     
   },
   devServer:{
-    port:'3000',
     contentBase:'./src',
     progress:true,
     compress:true,
@@ -35,6 +34,12 @@ module.exports = {
   module:{
     rules:[
       // { test: require.resolve("jquery"), loader: "expose-loader?$" },
+      //  {
+      //   test:/\.html$/,
+      //   use:[{
+      //     loader:'html-withimg-loader'
+      //   }]
+      // },
       {
         test: require.resolve('jquery'),
         use: [{
@@ -45,13 +50,28 @@ module.exports = {
           options: '$'
         }]
       },
+     
+      {
+        test:/\.(png|jpe?g|gif)$/,
+        use:[{
+          loader: 'file-loader',
+          options:{
+            outputPath:'img'
+          }
+          
+        },{
+          loader: 'url-loader',
+          options: {
+            limit: 8192,
+          },
+        }]
+      },
+
       {
         test:/\.js$/,
         use:[{
           loader:'eslint-loader',
-          
           options:{
-
           }
         }],
         exclude: /node_modules/,

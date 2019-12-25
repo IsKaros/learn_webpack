@@ -1,6 +1,12 @@
 @import './a.css';
 @import './b.css';
 
+body {
+  background: url('./sky.jpg');
+  height: 100%;
+  width: 100%;
+}
+
 body div {
- color:#fff 
+ color:#fff; 
 }
