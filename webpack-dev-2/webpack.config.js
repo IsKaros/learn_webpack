@@ -6,7 +6,15 @@ module.exports = {
     index:'./src/index.js',
   },
   devServer:{
-    open:true
+    open:true,
+    proxy:{
+      '/api':{
+        target:'http://localhost:3000',
+        pathRewrite:{
+          '/api':''
+        }
+      }
+    }
   },
 
   devtool:'cheap-module-source-map',
