@@ -35,7 +35,7 @@
   "dependencies": {
     "@babel/runtime": "^7.7.7",
     "html-withimg-loader": "^0.1.16",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "webpack-dev-server": "^3.9.0"
   }
 }
